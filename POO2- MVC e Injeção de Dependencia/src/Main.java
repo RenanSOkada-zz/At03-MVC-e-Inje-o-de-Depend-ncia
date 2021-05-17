@@ -5,31 +5,35 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Aluno alu1 = new Aluno("999999","777777", "12/05", "qweqwe@gmais.com", "Rafael");
-		
-		AlunoCSV a_csv = new AlunoCSV();
-		AlunoPersist persist = new AlunoPersist(a_csv);
-		persist.gravar(alu1);
-		
-		AlunoJSON a_json = new AlunoJSON();
-		persist = new AlunoPersist(a_json);
-		persist.gravar(alu1);
-		
-		AlunoXML a_xml = new AlunoXML();
-		persist = new AlunoPersist(a_xml);
-		persist.gravar(alu1);
-		
-		
-		//-------------Banco de dados-------------------
-		
-		
 		AlunoBO alunobo = new AlunoBO();
+		
+		Aluno alu1 = new Aluno("999999","777777", "12/05", "qweqwe@gmais.com", "Rafael");
 		Aluno alu2 = new Aluno("999999","777777", "04/05", "a@gmais.com", "Joao");
 		Aluno alu3 = new Aluno("888888","6666", "03/09", "b@gmais.com", "Kaio");
 		Aluno alu4 = new Aluno("555555","4444", "31/07", "c@gmais.com", "Mateus");
 		Aluno alu5 = new Aluno("33333","2222", "21/08", "d@gmais.com", "Lucas");
+		
+		AlunoCSV a_csv = new AlunoCSV();
+		AlunoPersist persist = new AlunoPersist(a_csv);
+		
+		AlunoJSON a_json = new AlunoJSON();
+		persist = new AlunoPersist(a_json);
+		
+		AlunoXML a_xml = new AlunoXML();
+		persist = new AlunoPersist(a_xml);
+		
 		persist = new AlunoPersist(alunobo);
 		
+		List<Aluno> lista = new ArrayList<Aluno>();
+		
+		persist.gravar(alu1);
+		
+		persist.gravar(alu1);
+		
+		persist.gravar(alu1);
+		
+		
+		//-------------Banco de dados-------------------
 		
 		//--------Inserir--------
 		
@@ -89,7 +93,8 @@ public class Main {
 		System.out.println(alu5);
 		
 		//--------Pesquisar por todos--------
-		List<Aluno> lista = new ArrayList<Aluno>();
+		
+		
 		lista = alunobo.pesquisarTodos();
 		for (Aluno aluno : lista) {
 			System.out.println(aluno.toString());
