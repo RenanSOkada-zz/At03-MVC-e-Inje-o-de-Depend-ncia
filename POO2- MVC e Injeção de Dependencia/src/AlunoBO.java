@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class AlunoBO {
+public class AlunoBO implements IAlunoPersist{
 
 	public boolean inserir(Aluno aluno) {
 		if(existe(aluno) != true) {
@@ -50,6 +50,12 @@ public class AlunoBO {
 	public List<Aluno> pesquisarTodos() {
 		AlunoDAO alunosDAO = new AlunoDAO();
 		return alunosDAO.pesquisarTodos();
+	}
+
+	@Override
+	public void gravar(Aluno alu) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
