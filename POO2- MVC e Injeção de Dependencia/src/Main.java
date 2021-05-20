@@ -5,7 +5,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		AlunoBO alunobo = new AlunoBO();
+		
 		
 		Aluno alu1 = new Aluno("999999","777777", "12/05", "qweqwe@gmais.com", "Rafael");
 		Aluno alu2 = new Aluno("999999","777777", "04/05", "a@gmais.com", "Joao");
@@ -25,6 +25,7 @@ public class Main {
 		persist = new AlunoPersist(a_xml);
 		persist.gravar(alu1);
 		
+		AlunoBO alunobo = new AlunoBO();
 		AlunoPersistDAO p = new AlunoPersistDAO(alunobo);
 		
 		List<Aluno> lista = new ArrayList<Aluno>();
