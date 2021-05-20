@@ -1,61 +1,47 @@
 import java.util.List;
 
-public class AlunoBO implements IAlunoPersist{
+public class AlunoBO implements IAlunoPersistDAO{
 
+	private IAlunoPersistDAO p;
+	
 	public boolean inserir(Aluno aluno) {
 		if(existe(aluno) != true) {
-			AlunoDAO alunosDAO = new AlunoDAO();
-			return alunosDAO.inserir(aluno);
+			return p.inserir(aluno);
 		}
 		return false;
 	}
 	
 	public boolean alterar(Aluno aluno) {
-			AlunoDAO alunosDAO = new AlunoDAO();
-			return alunosDAO.alterar(aluno);
+			return p.alterar(aluno);
 	}
 	
 	public boolean excluir(Aluno aluno) {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.excluir(aluno);
+		return p.excluir(aluno);
 	}
 	
 	public Aluno procurarPorMatricula(Aluno aluno) {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.procurarPorMatricula(aluno);
+		return p.procurarPorMatricula(aluno);
 	}
 	
 	public Aluno procurarPorDataNascimento(Aluno aluno) {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.procurarPorDataNascimento(aluno);
+		return p.procurarPorDataNascimento(aluno);
 	}
 	public Aluno procurarPorEmail(Aluno aluno) {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.procurarPorEmail(aluno);
+		return p.procurarPorEmail(aluno);
 	}
 	public Aluno procurarPorNome(Aluno aluno) {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.procurarPorNome(aluno);
+		return p.procurarPorNome(aluno);
 	}
 	public Aluno procurarPorCPF(Aluno aluno) {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.procurarPorCPF(aluno);
+		return p.procurarPorCPF(aluno);
 	}
 	
 	public boolean existe(Aluno aluno) {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.existe(aluno);
+		return p.existe(aluno);
 	}
 	
 	public List<Aluno> pesquisarTodos() {
-		AlunoDAO alunosDAO = new AlunoDAO();
-		return alunosDAO.pesquisarTodos();
-	}
-
-	@Override
-	public void gravar(Aluno alu) {
-		// TODO Auto-generated method stub
-		
+		return p.pesquisarTodos();
 	}
 	
 }

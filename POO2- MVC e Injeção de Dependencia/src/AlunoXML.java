@@ -2,10 +2,7 @@ import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -80,65 +77,5 @@ public class AlunoXML implements IAlunoPersist{
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-	}
-
-	@Override
-	public boolean inserir(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean alterar(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean excluir(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Aluno procurarPorMatricula(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Aluno procurarPorDataNascimento(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Aluno procurarPorEmail(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Aluno procurarPorNome(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Aluno procurarPorCPF(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean existe(Aluno aluno) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public List<Aluno> pesquisarTodos() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

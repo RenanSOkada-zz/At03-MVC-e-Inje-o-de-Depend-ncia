@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlunoDAO {
+public class AlunoDAO implements IAlunoPersistDAO{
 	
 	final String NOMEDATABELA = "aluno";
 	

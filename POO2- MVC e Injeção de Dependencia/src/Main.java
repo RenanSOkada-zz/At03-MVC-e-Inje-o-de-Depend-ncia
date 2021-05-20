@@ -15,57 +15,55 @@ public class Main {
 		
 		AlunoCSV a_csv = new AlunoCSV();
 		AlunoPersist persist = new AlunoPersist(a_csv);
+		persist.gravar(alu1);
 		
 		AlunoJSON a_json = new AlunoJSON();
 		persist = new AlunoPersist(a_json);
+		persist.gravar(alu1);
 		
 		AlunoXML a_xml = new AlunoXML();
 		persist = new AlunoPersist(a_xml);
+		persist.gravar(alu1);
 		
-		persist = new AlunoPersist(alunobo);
+		AlunoPersistDAO p = new AlunoPersistDAO(alunobo);
 		
 		List<Aluno> lista = new ArrayList<Aluno>();
 		
-		persist.gravar(alu1);
-		
-		persist.gravar(alu1);
-		
-		persist.gravar(alu1);
 		
 		
 		//-------------Banco de dados-------------------
 		
 		//--------Inserir--------
 		
-		if (alunobo.inserir(alu2))
+		if (p.inserir(alu2))
 			System.out.println("Inserido com Sucesso");
 		else
 			System.out.println("Erro ao Inserir");
 		
-		if (alunobo.inserir(alu3))
+		if (p.inserir(alu3))
 			System.out.println("Inserido com Sucesso");
 		else
 			System.out.println("Erro ao Inserir");
 		
-		if (alunobo.inserir(alu4))
+		if (p.inserir(alu4))
 			System.out.println("Inserido com Sucesso");
 		else
 			System.out.println("Erro ao Inserir");
 		
 		//--------Existe--------
 		
-		if (alunobo.existe(alu3))
+		if (p.existe(alu3))
 			System.out.println("Aluno Encontrada");
 		else
 			System.out.println("Nao Encontrada");
 		
 		//--------Alterar--------
-		alunobo.alterar(alu5);
-		alu5 = alunobo.procurarPorCPF(alu5);
+		p.alterar(alu5);
+		alu5 = p.procurarPorCPF(alu5);
 		System.out.println(alu5);
 		
 		//--------Excluir--------
-		if (alunobo.excluir(alu3))
+		if (p.excluir(alu3))
 			System.out.println("Excluido com Sucesso");
 		else
 			System.out.println("Erro ao Excluir");
@@ -73,29 +71,29 @@ public class Main {
 		
 		
 		//--------Procurar Matricula--------
-		alu1 = alunobo.procurarPorCPF(alu1);
+		alu1 = p.procurarPorCPF(alu1);
 		System.out.println(alu1);
 		
 		//--------Procurar por data de nascimento--------
-		alu2 = alunobo.procurarPorDataNascimento(alu2);
+		alu2 = p.procurarPorDataNascimento(alu2);
 		System.out.println(alu2);
 				
 		//--------Procurar por por email--------
-		alu3 = alunobo.procurarPorEmail(alu3);
+		alu3 = p.procurarPorEmail(alu3);
 		System.out.println(alu3);
 		
 		//--------Procurar por nome--------
-		alu4 = alunobo.procurarPorNome(alu4);
+		alu4 = p.procurarPorNome(alu4);
 		System.out.println(alu4);
 		
 		//--------Procurar por cpf--------
-		alu5 = alunobo.procurarPorCPF(alu5);
+		alu5 = p.procurarPorCPF(alu5);
 		System.out.println(alu5);
 		
 		//--------Pesquisar por todos--------
 		
 		
-		lista = alunobo.pesquisarTodos();
+		lista = p.pesquisarTodos();
 		for (Aluno aluno : lista) {
 			System.out.println(aluno.toString());
 		}
