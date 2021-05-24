@@ -9,6 +9,7 @@ public class Aluno extends Pessoa {
 	public Aluno() {
 	}
 	
+	
 	public Aluno(String nome) {
 	super(nome);
 	}
@@ -37,9 +38,11 @@ public class Aluno extends Pessoa {
 		setMatricula(matricula);
 		setCpf(cpf);
 		setDataNascimento(dataNascimento);
-		setEmail(email);				
+		setEmail(email);	
 	}
-
+	
+	
+	
 	public String getMatricula() {
 		return matricula;
 	}
@@ -72,6 +75,7 @@ public class Aluno extends Pessoa {
 		this.email = email;
 	}
 
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -88,12 +92,5 @@ public class Aluno extends Pessoa {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-
-	
-	
-	
-	
 
 }

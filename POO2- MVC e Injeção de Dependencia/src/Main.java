@@ -7,11 +7,13 @@ public class Main {
 		
 		
 		
-		Aluno alu1 = new Aluno("999999","777777", "12/05", "qweqwe@gmais.com", "Rafael");
-		Aluno alu2 = new Aluno("999999","777777", "04/05", "a@gmais.com", "Joao");
-		Aluno alu3 = new Aluno("888888","6666", "03/09", "b@gmais.com", "Kaio");
-		Aluno alu4 = new Aluno("555555","4444", "31/07", "c@gmais.com", "Mateus");
-		Aluno alu5 = new Aluno("33333","2222", "21/08", "d@gmais.com", "Lucas");
+		Aluno alu1 = new Aluno("999999","777777", "12/05/2000", "qweqwe@gmais.com", "Rafael");
+		Aluno alu2 = new Aluno("999999","777777", "04/05/2003", "a@gmais.com", "Joao");
+		Aluno alu3 = new Aluno("888888","6666", "03/09/1982", "b@gmais.com", "Kaio");
+		Aluno alu4 = new Aluno("555555","4444", "31/07/1943", "c@gmais.com", "Mateus");
+		Aluno alu5 = new Aluno("33333","2222", "21/08/1231", "d@gmais.com", "Lucas");
+	
+		//-------------CSV, JSON e XML-------------------
 		
 		AlunoCSV a_csv = new AlunoCSV();
 		AlunoPersist persist = new AlunoPersist(a_csv);
@@ -63,11 +65,7 @@ public class Main {
 		alu5 = p.procurarPorCPF(alu5);
 		System.out.println(alu5);
 		
-		//--------Excluir--------
-		if (p.excluir(alu3))
-			System.out.println("Excluido com Sucesso");
-		else
-			System.out.println("Erro ao Excluir");
+		
 
 		
 		
@@ -99,6 +97,11 @@ public class Main {
 			System.out.println(aluno.toString());
 		}
 		
+		//--------Excluir--------
+		if (p.excluir(alu3))
+			System.out.println("Excluido com Sucesso");
+		else
+			System.out.println("Erro ao Excluir");
 	}
 
 }

@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/gson-2.8.0.jar"/>
 	<classpathentry kind="lib" path="ExXMLSimples/lib/jdom.jar"/>
+	<classpathentry kind="lib" path="src/lib/mysql-connector-java.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

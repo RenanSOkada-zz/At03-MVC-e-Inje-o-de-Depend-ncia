@@ -11,7 +11,7 @@ public class AlunoDAO implements IAlunoPersistDAO{
     public boolean inserir(Aluno aluno) {
         try {
             Connection conn = Conexao.conectar();
-            String sql = "INSERT INTO " + NOMEDATABELA + " (matricula) VALUES (?), (cpf) VALUES (?), (dataNascimento) VALUES (?), (email) VALUES (?) , (nome) VALUES (?);";
+            String sql = "INSERT INTO " + NOMEDATABELA + " (matricula,cpf, dataNascimento, email, nome) VALUES (?,?,?,?,?);";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, aluno.getMatricula());
             ps.setString(2, aluno.getCpf());
