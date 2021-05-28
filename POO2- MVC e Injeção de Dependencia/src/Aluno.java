@@ -1,14 +1,15 @@
 
+import java.util.Date;
+
 public class Aluno extends Pessoa {
 	
 	private String matricula;
 	private String cpf;
-	private String dataNascimento;
+	private Date dataNascimento;
 	private String email;
 	
 	public Aluno() {
 	}
-	
 	
 	public Aluno(String nome) {
 	super(nome);
@@ -25,7 +26,7 @@ public class Aluno extends Pessoa {
 		setCpf(cpf);
 	}
 	
-	public Aluno( String matricula,	String cpf, String dataNascimento,  String nome) {
+	public Aluno( String matricula,	String cpf, Date dataNascimento,  String nome) {
 		super(nome);
 		setMatricula(matricula);
 		setCpf(cpf);
@@ -33,7 +34,7 @@ public class Aluno extends Pessoa {
 	}
 	
 	
-	public Aluno( String matricula,	String cpf, String dataNascimento, String email,  String nome) {
+	public Aluno( String matricula,	String cpf, Date dataNascimento, String email,  String nome) {
 		super(nome);
 		setMatricula(matricula);
 		setCpf(cpf);
@@ -51,7 +52,7 @@ public class Aluno extends Pessoa {
 		return cpf;
 	}
 
-	public String getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
@@ -67,10 +68,11 @@ public class Aluno extends Pessoa {
 		this.cpf = cpf;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
+		
+		
 	public void setEmail(String email) {
 		this.email = email;
 	}

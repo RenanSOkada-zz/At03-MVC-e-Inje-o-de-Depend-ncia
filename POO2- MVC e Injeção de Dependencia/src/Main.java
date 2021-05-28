@@ -1,18 +1,28 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
+		String data1 = "12/05/2000";
+		String data2 = "04/05/2003";
+		String data3 = "03/09/1982";
+		String data4 = "31/07/1943";
 		
-		
-		Aluno alu1 = new Aluno("999999","777777", "12/05/2000", "qweqwe@gmais.com", "Rafael");
-		Aluno alu2 = new Aluno("999999","777777", "04/05/2003", "a@gmais.com", "Joao");
-		Aluno alu3 = new Aluno("888888","6666", "03/09/1982", "b@gmais.com", "Kaio");
-		Aluno alu4 = new Aluno("555555","4444", "31/07/1943", "c@gmais.com", "Mateus");
-		Aluno alu5 = new Aluno("33333","2222", "21/08/1231", "d@gmais.com", "Lucas");
+		Date dt_nasc1 = DataUtil.StrTodate(data1);
+		Date dt_nasc2 = DataUtil.StrTodate(data2);
+		Date dt_nasc3 = DataUtil.StrTodate(data3);
+		Date dt_nasc4 = DataUtil.StrTodate(data4);
 	
+		Aluno alu1 = new Aluno("21344","777777", dt_nasc1, "qweqwe@gmais.com", "Rafael");
+		Aluno alu2 = new Aluno("2341241","2222222", dt_nasc2, "a@gmais.com", "Joao");
+		Aluno alu3 = new Aluno("2134123412","666666", dt_nasc3, "b@gmais.com", "Kaio");
+		Aluno alu4 = new Aluno("1234124","4444444", dt_nasc4, "c@gmais.com", "Mateus");
+		//Aluno alu5 = new Aluno("33333","2222", "21/08/1231", "d@gmais.com", "Lucas");
+	
+		
 		//-------------CSV, JSON e XML-------------------
 		
 		AlunoCSV a_csv = new AlunoCSV();
@@ -61,13 +71,11 @@ public class Main {
 			System.out.println("Nao Encontrada");
 		
 		//--------Alterar--------
-		p.alterar(alu5);
-		alu5 = p.procurarPorCPF(alu5);
-		System.out.println(alu5);
+		p.alterar(alu3);
 		
-		
-
-		
+		//--------procurar por CPF--------
+		alu3 = p.procurarPorCPF(alu3);
+		System.out.println(alu3);
 		
 		//--------Procurar Matricula--------
 		alu1 = p.procurarPorCPF(alu1);
@@ -86,8 +94,8 @@ public class Main {
 		System.out.println(alu4);
 		
 		//--------Procurar por cpf--------
-		alu5 = p.procurarPorCPF(alu5);
-		System.out.println(alu5);
+		alu4 = p.procurarPorCPF(alu4);
+		System.out.println(alu4);
 		
 		//--------Pesquisar por todos--------
 		

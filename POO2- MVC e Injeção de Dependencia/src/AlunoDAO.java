@@ -11,11 +11,11 @@ public class AlunoDAO implements IAlunoPersistDAO{
     public boolean inserir(Aluno aluno) {
         try {
             Connection conn = Conexao.conectar();
-            String sql = "INSERT INTO " + NOMEDATABELA + " (matricula,cpf, dataNascimento, email, nome) VALUES (?,?,?,?,?);";
+            String sql = "INSERT INTO " + NOMEDATABELA + " (matricula, cpf, dataNascimento, email, nome) VALUES (?,?,?,?,?);";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, aluno.getMatricula());
             ps.setString(2, aluno.getCpf());
-            ps.setString(3, aluno.getDataNascimento());
+            ps.setString(3, DataUtil.DataForStringMySQL(aluno.getDataNascimento()));
             ps.setString(4, aluno.getEmail());
             ps.setString(5, aluno.getNome());
             ps.executeUpdate();
@@ -34,7 +34,7 @@ public class AlunoDAO implements IAlunoPersistDAO{
             String sql = "UPDATE " + NOMEDATABELA + " SET cpf = ?, SET getDataNascimento = ?, SET email = ?, SET nome = ? WHERE matricula = ?;";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, aluno.getCpf());
-            ps.setString(2, aluno.getDataNascimento());
+            ps.setString(2, DataUtil.DataForStringMySQL(aluno.getDataNascimento()));
             ps.setString(3, aluno.getEmail());
             ps.setString(4, aluno.getNome());
             ps.setString(5, aluno.getMatricula());
@@ -74,7 +74,7 @@ public class AlunoDAO implements IAlunoPersistDAO{
             if (rs.next()) {
                 Aluno obj = new Aluno();
                 obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getString(2));
+                obj.setDataNascimento(rs.getDate(2));
                 obj.setEmail(rs.getString(3));
                 obj.setMatricula(rs.getString(4));
                 obj.setNome(rs.getString(5));
@@ -102,7 +102,7 @@ public class AlunoDAO implements IAlunoPersistDAO{
             if (rs.next()) {
                 Aluno obj = new Aluno();
                 obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getString(2));
+                obj.setDataNascimento(rs.getDate(2));
                 obj.setEmail(rs.getString(3));
                 obj.setMatricula(rs.getString(4));
                 obj.setNome(rs.getString(5));
@@ -125,12 +125,12 @@ public class AlunoDAO implements IAlunoPersistDAO{
             Connection conn = Conexao.conectar();
             String sql = "SELECT * FROM " + NOMEDATABELA + " WHERE dataNascimento = ?;";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, aluno.getDataNascimento());
+            ps.setString(1, DataUtil.DataForStringMySQL(aluno.getDataNascimento()));
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Aluno obj = new Aluno();
                 obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getString(2));
+                obj.setDataNascimento(rs.getDate(2));
                 obj.setEmail(rs.getString(3));
                 obj.setMatricula(rs.getString(4));
                 obj.setNome(rs.getString(5));
@@ -158,7 +158,7 @@ public class AlunoDAO implements IAlunoPersistDAO{
             if (rs.next()) {
                 Aluno obj = new Aluno();
                 obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getString(2));
+                obj.setDataNascimento(rs.getDate(2));
                 obj.setEmail(rs.getString(3));
                 obj.setMatricula(rs.getString(4));
                 obj.setNome(rs.getString(5));
@@ -186,7 +186,7 @@ public class AlunoDAO implements IAlunoPersistDAO{
             if (rs.next()) {
                 Aluno obj = new Aluno();
                 obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getString(2));
+                obj.setDataNascimento(rs.getDate(2));
                 obj.setEmail(rs.getString(3));
                 obj.setMatricula(rs.getString(4));
                 obj.setNome(rs.getString(5));
@@ -244,7 +244,7 @@ public class AlunoDAO implements IAlunoPersistDAO{
             while (rs.next()) {
             	Aluno obj = new Aluno();
                 obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getString(2));
+                obj.setDataNascimento(rs.getDate(2));
                 obj.setEmail(rs.getString(3));
                 obj.setMatricula(rs.getString(4));
                 obj.setNome(rs.getString(5));

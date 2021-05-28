@@ -56,8 +56,8 @@ public class AlunoXML implements IAlunoPersist{
 				Element cpf = new Element("email");
 				cpf.setText(alu.getCpf());
 				
-				Element DataNascimento = new Element("DatadeNascimento");
-				DataNascimento.setText(alu.getDataNascimento());
+				Element DataNascimento = new Element("datadeNascimento");
+				DataNascimento.setText(DataUtil.DataForStringPadrao(alu.getDataNascimento()));
 							
 				aluno.addContent(nome);
 				aluno.addContent(email);
