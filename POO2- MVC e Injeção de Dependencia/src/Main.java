@@ -19,9 +19,11 @@ public class Main {
 		Date dt_nasc = DataUtil.StrTodate(data5);
 	
 		Aluno alu1 = new Aluno("1","777777", dt_nasc1, "qweqwe@gmais.com", "Rafael");
+		
 		Aluno alu2 = new Aluno("2","2222222", dt_nasc2, "a@gmais.com", "Joao");
 		Aluno alu3 = new Aluno("3","666666", dt_nasc3, "b@gmais.com", "Kaio");
 		Aluno alu4 = new Aluno("4","4444444", dt_nasc4, "c@gmais.com", "Mateus");
+		
 		Aluno alu5 = new Aluno("3","2222", dt_nasc, "d@gmais.com", "Lucas");
 		Aluno alu6 = new Aluno("3","", dt_nasc, "", "");
 	
