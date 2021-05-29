@@ -73,10 +73,10 @@ public class AlunoDAO implements IAlunoPersistDAO{
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Aluno obj = new Aluno();
-                obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getDate(2));
-                obj.setEmail(rs.getString(3));
-                obj.setMatricula(rs.getString(4));
+                obj.setMatricula(rs.getString(1));
+            	obj.setCpf(rs.getString(2)); 
+            	obj.setDataNascimento(rs.getDate(3));
+            	obj.setEmail(rs.getString(4));
                 obj.setNome(rs.getString(5));
                 ps.close();
                 rs.close();
@@ -101,10 +101,10 @@ public class AlunoDAO implements IAlunoPersistDAO{
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Aluno obj = new Aluno();
-                obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getDate(2));
-                obj.setEmail(rs.getString(3));
-                obj.setMatricula(rs.getString(4));
+                obj.setMatricula(rs.getString(1));
+            	obj.setCpf(rs.getString(2)); 
+            	obj.setDataNascimento(rs.getDate(3));
+            	obj.setEmail(rs.getString(4));
                 obj.setNome(rs.getString(5));
                 ps.close();
                 rs.close();
@@ -129,10 +129,10 @@ public class AlunoDAO implements IAlunoPersistDAO{
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Aluno obj = new Aluno();
-                obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getDate(2));
-                obj.setEmail(rs.getString(3));
-                obj.setMatricula(rs.getString(4));
+                obj.setMatricula(rs.getString(1));
+            	obj.setCpf(rs.getString(2)); 
+            	obj.setDataNascimento(rs.getDate(3));
+            	obj.setEmail(rs.getString(4));
                 obj.setNome(rs.getString(5));
                 ps.close();
                 rs.close();
@@ -157,10 +157,10 @@ public class AlunoDAO implements IAlunoPersistDAO{
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Aluno obj = new Aluno();
-                obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getDate(2));
-                obj.setEmail(rs.getString(3));
-                obj.setMatricula(rs.getString(4));
+                obj.setMatricula(rs.getString(1));
+            	obj.setCpf(rs.getString(2)); 
+            	obj.setDataNascimento(rs.getDate(3));
+            	obj.setEmail(rs.getString(4));
                 obj.setNome(rs.getString(5));
                 ps.close();
                 rs.close();
@@ -185,10 +185,10 @@ public class AlunoDAO implements IAlunoPersistDAO{
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Aluno obj = new Aluno();
-                obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getDate(2));
-                obj.setEmail(rs.getString(3));
-                obj.setMatricula(rs.getString(4));
+                obj.setMatricula(rs.getString(1));
+            	obj.setCpf(rs.getString(2)); 
+            	obj.setDataNascimento(rs.getDate(3));
+            	obj.setEmail(rs.getString(4));
                 obj.setNome(rs.getString(5));
                 ps.close();
                 rs.close();
@@ -243,12 +243,12 @@ public class AlunoDAO implements IAlunoPersistDAO{
         try {
             while (rs.next()) {
             	Aluno obj = new Aluno();
-                obj.setCpf(rs.getString(1));
-                obj.setDataNascimento(rs.getDate(2));
-                obj.setEmail(rs.getString(3));
-                obj.setMatricula(rs.getString(4));
+            	obj.setMatricula(rs.getString(1));
+            	obj.setCpf(rs.getString(2)); 
+            	obj.setDataNascimento(rs.getDate(3));
+            	obj.setEmail(rs.getString(4));
                 obj.setNome(rs.getString(5));
-                
+                                
                 listObj.add(obj);
             }
             return listObj;

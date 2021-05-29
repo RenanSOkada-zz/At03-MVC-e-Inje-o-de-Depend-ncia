@@ -10,17 +10,20 @@ public class Main {
 		String data2 = "04/05/2003";
 		String data3 = "03/09/1982";
 		String data4 = "31/07/1943";
+		String data5 = "21/08/1231";
 		
 		Date dt_nasc1 = DataUtil.StrTodate(data1);
 		Date dt_nasc2 = DataUtil.StrTodate(data2);
 		Date dt_nasc3 = DataUtil.StrTodate(data3);
 		Date dt_nasc4 = DataUtil.StrTodate(data4);
+		Date dt_nasc = DataUtil.StrTodate(data5);
 	
-		Aluno alu1 = new Aluno("21344","777777", dt_nasc1, "qweqwe@gmais.com", "Rafael");
-		Aluno alu2 = new Aluno("2341241","2222222", dt_nasc2, "a@gmais.com", "Joao");
-		Aluno alu3 = new Aluno("2134123412","666666", dt_nasc3, "b@gmais.com", "Kaio");
-		Aluno alu4 = new Aluno("1234124","4444444", dt_nasc4, "c@gmais.com", "Mateus");
-		//Aluno alu5 = new Aluno("33333","2222", "21/08/1231", "d@gmais.com", "Lucas");
+		Aluno alu1 = new Aluno("1","777777", dt_nasc1, "qweqwe@gmais.com", "Rafael");
+		Aluno alu2 = new Aluno("2","2222222", dt_nasc2, "a@gmais.com", "Joao");
+		Aluno alu3 = new Aluno("3","666666", dt_nasc3, "b@gmais.com", "Kaio");
+		Aluno alu4 = new Aluno("4","4444444", dt_nasc4, "c@gmais.com", "Mateus");
+		Aluno alu5 = new Aluno("3","2222", dt_nasc, "d@gmais.com", "Lucas");
+		Aluno alu6 = new Aluno("3","", dt_nasc, "", "");
 	
 		
 		//-------------CSV, JSON e XML-------------------
@@ -70,17 +73,12 @@ public class Main {
 		else
 			System.out.println("Nao Encontrada");
 		
-		//--------Alterar--------
-		p.alterar(alu3);
 		
-		//--------procurar por CPF--------
-		alu3 = p.procurarPorCPF(alu3);
-		System.out.println(alu3);
 		
 		//--------Procurar Matricula--------
-		alu1 = p.procurarPorCPF(alu1);
-		System.out.println(alu1);
-		
+		alu6 = p.procurarPorMatricula(alu6);
+		System.out.println(alu6);
+	
 		//--------Procurar por data de nascimento--------
 		alu2 = p.procurarPorDataNascimento(alu2);
 		System.out.println(alu2);
@@ -96,6 +94,11 @@ public class Main {
 		//--------Procurar por cpf--------
 		alu4 = p.procurarPorCPF(alu4);
 		System.out.println(alu4);
+	
+		//--------Alterar--------
+		p.alterar(alu5);
+		alu5 = p.procurarPorMatricula(alu5);
+		System.out.println(alu5);
 		
 		//--------Pesquisar por todos--------
 		
@@ -104,12 +107,7 @@ public class Main {
 		for (Aluno aluno : lista) {
 			System.out.println(aluno.toString());
 		}
-		
-		//--------Excluir--------
-		if (p.excluir(alu3))
-			System.out.println("Excluido com Sucesso");
-		else
-			System.out.println("Erro ao Excluir");
+			
 	}
 
 }

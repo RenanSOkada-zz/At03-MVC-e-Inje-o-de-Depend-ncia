@@ -15,6 +15,10 @@ public class Aluno extends Pessoa {
 	super(nome);
 	}
 	
+	public Aluno(Date dataNascimento) {
+		setDataNascimento(dataNascimento);
+	}
+	
 	public Aluno( String matricula,  String nome) {
 		super(nome);
 		setMatricula(matricula);						
@@ -41,8 +45,6 @@ public class Aluno extends Pessoa {
 		setDataNascimento(dataNascimento);
 		setEmail(email);	
 	}
-	
-	
 	
 	public String getMatricula() {
 		return matricula;
@@ -86,7 +88,7 @@ public class Aluno extends Pessoa {
 		builder.append(", cpf=");
 		builder.append(cpf);
 		builder.append(", dataNascimento=");
-		builder.append(dataNascimento);
+		builder.append(DataUtil.DataForStringPadrao(dataNascimento));
 		builder.append(", email=");
 		builder.append(email);
 		builder.append(", toString()=");

@@ -10,7 +10,7 @@ public class AlunoCSV implements IAlunoPersist{
 		try {
 			arq = new FileWriter("aluno.csv");
 			gravarArq = new PrintWriter(arq);
-			gravarArq.printf("%s;%s;%s;%s;%s\n", alu.getCpf(), alu.getDataNascimento(), alu.getEmail(), alu.getMatricula(), alu.getNome());
+			gravarArq.printf("%s;%s;%s;%s;%s\n", alu.getCpf(), DataUtil.DataForStringPadrao(alu.getDataNascimento()), alu.getEmail(), alu.getMatricula(), alu.getNome());
 			arq.close();
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -15,6 +15,9 @@ public void gravar(Aluno alu) {
 		FileWriter writer;
 		try {
 			writer = new FileWriter("aluno.json ");
+			if(gson.toJson(alu) == gson.toJson(alu.getDataNascimento())) {
+				writer.write(gson.toJson(DataUtil.DataForStringPadrao(alu.getDataNascimento()))); 
+			}
 			writer.write(gson.toJson(alu));
 			writer.close();
 		} catch (IOException e) {
